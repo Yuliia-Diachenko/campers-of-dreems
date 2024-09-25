@@ -1,0 +1,30 @@
+
+.heroSection {
+    background-image: linear-gradient(
+      to bottom, 
+      rgba(46, 47, 66, 0.7), 
+      rgba(46, 47, 66, 0.7)), url("../../../public/Camp-img.jpg");
+      max-width: 1440px;
+      max-height: 696px;
+      margin: 0 auto;
+  }
+.container {
+    max-width: 571px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 260px 806px 260px 64px;
+    justify-content: center;
+    /* gap: 16px; */
+}
+.prg {
+    color: #fff;
+    margin-bottom: 24px;
+}
+.herroTitle {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 0.66667;
+    color: #f7f7f7;
+   
+}
