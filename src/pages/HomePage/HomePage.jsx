@@ -8,7 +8,7 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-      navigate("/catalog", { replace: true });    
+      navigate("/catalog", { replace: false });    
   };
   
   return (

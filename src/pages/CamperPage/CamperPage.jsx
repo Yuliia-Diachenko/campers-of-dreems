@@ -1,13 +1,16 @@
 import css from './CamperPage.module.css';
-import {  useEffect } from 'react';
+import {  useEffect, useParams  } from 'react';
+import { Link, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCamper } from '../../redux/user/operations';
 import { selectCamper } from '../../redux/campers/selectors';
+
 export default function CamperPage() {
+  const { camperId } = useParams();
 
     const dispatch = useDispatch();
     const camperData = useSelector(selectCamper);
-    const camperId = camperData?._id;
+    // const camperId = camperData?._id;
     useEffect(() => {
         if (open && !camperData) {
           dispatch(fetchCamper(camperId));
@@ -31,6 +34,11 @@ export default function CamperPage() {
             <img src={`https://ftp.goit.study/img/campers-test-task/${camperData.id}-3.webp`} alt="photo" />
             </li>
         </ul>
+        <ul>
+          <li><Link to="features">Features</Link></li>
+          <li><Link to="reiews">Reiews</Link></li>
+        </ul>
+        <Outlet />
         </div>
        
     )
