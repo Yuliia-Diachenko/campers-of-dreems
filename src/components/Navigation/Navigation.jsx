@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
+import icons from '../../image/symbol-defs-logo.svg';
 import clsx from 'clsx';
 
 const buildLinkClass = ({ isActive }) => {
@@ -12,7 +13,9 @@ export default function Navigation() {
     <nav className={css.container}>      
       <div className={css.nav}>
       <NavLink  to="/" className={css.logo}>
-      <img src="../../../public/Logo.svg"/>
+      <svg width="136" height="16">
+          <use href={`${icons}#icon-Logo`}></use>
+      </svg>
       </NavLink> 
       <div className={css.groopNav}>
           <NavLink className={buildLinkClass} to="/">
