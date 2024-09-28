@@ -8,15 +8,14 @@ const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage"))
 const Features = lazy(() => import("../Features/Features"));
 const Reviews = lazy(() => import("../Features/Features"));
 
-
 export default function App() {
 
   return (     
     <Layout>
       <Suspense fallback={null}>
         <Routes>
-          <Route path="./" element={<HomePage />} />
-          <Route path="./catalog" element={<CatalogPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/catalog/:id" element= {<CamperPage />}>
               <Route path="features" element={<Features />} />
               <Route path="reviews" element={<Reviews />} />

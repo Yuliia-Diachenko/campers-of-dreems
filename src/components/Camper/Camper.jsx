@@ -39,9 +39,10 @@ return (
 </div>
 <div>
     <div>
-    <FaStar /><span>{camper.rating}</span><span>(2 Reviews)</span>
+        <FaStar /><span>{camper.rating}</span><span>(2 Reviews)</span>
         <CiMap /><span>{camper.location}</span>
-        <button className={buildLinkClass} ><CiHeart /></button>
+        <button className={buildLinkClass} >
+        <CiHeart /></button>
     </div>
 <div><p>{text}</p></div>
 <div className={css.feature}>

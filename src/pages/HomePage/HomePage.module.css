@@ -3,8 +3,8 @@
       to bottom, 
       rgba(46, 47, 66, 0.7), 
       rgba(46, 47, 66, 0.7)), url("../../../public/Camp-img.jpg");
-      max-width: 1440px;
-      max-height: 696px;
+      width: 1440px;
+      height: 696px;
       margin: 0 auto;
   }
 .container {
@@ -19,11 +19,13 @@
 .prg {
     color: #fff;
     margin-bottom: 24px;
+    width: 571px; 
 }
 .herroTitle {
     font-weight: 600;
     font-size: 48px;
     line-height: 0.66667;
     color: #f7f7f7;
+    width: 571px; 
    
 }

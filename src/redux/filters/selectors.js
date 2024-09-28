@@ -13,23 +13,26 @@ export const selectVisibleCampers = createSelector([
     selectLocationFilter,  
     selectFormFilter,
     selectTransmissionFilter,
-    selectBathroomFilter,
-    selectKitchenFilter,
-    selectACFilter,
+    // selectBathroomFilter,
+    // selectKitchenFilter,
+    // selectACFilter,
  ], (campers, 
         locationFilter, 
         formFilter, 
-        transmissionFilter, 
-        bathroomFilter, 
-        kitchenFilter, 
-        ACFilter ) => {
+        transmissionFilter 
+        // bathroomFilter, 
+        // kitchenFilter, 
+        // ACFilter 
+    ) => {
     return campers.filter(camper =>
-            camper.location.toLowerCase().includes(locationFilter.toLowerCase()) ||
-            camper.form.includes(formFilter) || camper.transmission.includes(transmissionFilter) ||
-            camper.bathroom.includes(bathroomFilter) ||
-            camper.kitchen.includes(kitchenFilter) ||
-            camper.AC.includes(ACFilter)
-            );
-});
+            camper.location?.toLowerCase().includes(locationFilter?.toLowerCase()) ||
+            camper.form?.includes(formFilter) || 
+            camper.transmission?.includes(transmissionFilter) 
+        );
+    });
+            // camper.bathroom?.includes(bathroomFilter) ||
+            // camper.kitchen?.includes(kitchenFilter) ||
+            // camper.AC?.includes(ACFilter)
+
 
 

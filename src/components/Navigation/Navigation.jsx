@@ -10,17 +10,19 @@ export default function Navigation() {
   
   return (    
     <nav className={css.container}>      
+      <div className={css.nav}>
       <NavLink  to="/" className={css.logo}>
       <img src="../../../public/Logo.svg"/>
       </NavLink> 
-      <ul className={css.groopNav}>
-          <li><NavLink className={buildLinkClass} to="/">
+      <div className={css.groopNav}>
+          <NavLink className={buildLinkClass} to="/">
             Home
-          </NavLink></li>
-          <li><NavLink className={buildLinkClass} to="/catalog">
+          </NavLink>
+          <NavLink className={buildLinkClass} to="/catalog">
             Catalog
-          </NavLink></li>  
-      </ul>
+          </NavLink>
+          </div>
+      </div>
     </nav>
   
   );
