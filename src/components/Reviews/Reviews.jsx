@@ -20,7 +20,7 @@ import BookForm from '../BookForm/BookForm';
 //     return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 //   }
 
-export default function ReviewsPage() {
+export default function Reviews() {
       // const firstLetter = reviews.reviewer_name.firstName.charAt(0).toUpperCase();
     // const [value, setValue] = React.useState<number | null>(2);
     // const [hover, setHover] = React.useState(-1);

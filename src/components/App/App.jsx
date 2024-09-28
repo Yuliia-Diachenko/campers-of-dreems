@@ -11,6 +11,7 @@
 
 import NavFeatures from '../NavFeatures/NavFeatures';
 import Feature from '../Feature/Feature';
+
 import css from './App.module.css';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
     <div className={css.containerFeauter}>
     <NavFeatures/>
     <Feature/>
+  
     </div>
     // <Layout>
     //   <Suspense fallback={null}>
