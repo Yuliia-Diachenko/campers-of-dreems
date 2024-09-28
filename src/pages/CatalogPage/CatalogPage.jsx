@@ -1,19 +1,50 @@
 import css from './CatalogPage.module.css';
-import {Link, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { useId } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCampers } from "../../redux/campers/operations";
+import { selectError, selectLoading } from "../../redux/campers/selectors";
+import { selectVisibleCampers } from "../../redux/filters/selectors";
+import Loader from '../../components/Loader/Loader';
+import Camper from '../../components/Camper/Camper';
+import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
-export default function CatalogPage({campers}) {
-    const location = useLocation();
+const FeedbackSchema = Yup.object().shape({   
+    location: Yup.string(),
+});
+
+export default function CatalogPage() {
     const fieldId = useId();
-    const geolocation = navigator.geolocation.getCurrentPosition();
+    const dispatch = useDispatch();
+    const isLoading = useSelector(selectLoading);
+    const error = useSelector(selectError); 
+    // const campers = useSelector(selectCampers);
+    const campers = useSelector(selectVisibleCampers);
+
+    useEffect(() => {
+      dispatch(fetchCampers());
+    }, [dispatch]);
+    
+    const handleChange = (values, actions) => {  
+
+        actions.resetForm();       
+        };
 
     return(
         <div className={css.container}>
             <aside>
-                <form action="">
-                    <label htmlFor="">Location</label>
-                    <input type="text" id={`${fieldId}-location`} placeholder={geolocation || "Kyiv, Ukraine"}/>
-                </form>
+                <Formik initialValues={{location: campers?.location}} 
+                        onChange={handleChange} 
+                        validationSchema={FeedbackSchema}>
+                 <Form>
+                    <label htmlFor={`${fieldId}-location`}>Location</label>
+                    <Field onChange={handleChange}  name='location' type="text" id={`${fieldId}-location`} placeholder={ "Kyiv, Ukraine"}/>
+                    <ErrorMessage name="location" component="span" className={css.error}/>
+                </Form>
+                </Formik>
                 <div>
                     <p>Filters</p>
                     <h4>Vehicle equipment</h4>
@@ -53,12 +84,14 @@ export default function CatalogPage({campers}) {
                     </aside>
                 <div>
 <ul className={css.list}>
+{isLoading && !error && <Loader />}
       {campers.map((camper) => (
         <li key={camper.id} >
-            <Link to={`/campers/${camper.id}`} state={{ from: location }} className={css.link} >{camper}</Link>
+            <Link to={`/campers/${camper.id}`} className={css.link} ><Camper/></Link>
         </li>
       ))}
     </ul>
+    <LoadMoreBtn/>
     </div>    
     </div>
     )

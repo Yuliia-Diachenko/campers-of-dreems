@@ -1,8 +1,8 @@
 import css from './CamperPage.module.css';
-import {  useEffect, useParams  } from 'react';
+import { useEffect, useParams } from 'react';
 import NavFeatures from '../../components/NavFeatures/NavFeatures';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCamper } from '../../redux/user/operations';
+import { fetchCamper } from '../../redux/campers/operations';
 import { selectCamper } from '../../redux/campers/selectors';
 
 export default function CamperPage() {

@@ -1,21 +1,37 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { persistStore } from "redux-persist";
 
-const initialState = {
-    campers: {
-        items: [] 
+    import { configureStore } from "@reduxjs/toolkit";
+    import { campersReducer } from "../redux/campers/slice";
+    import  filtersReducer  from "../redux/filters/slice";    
+    import storage from "redux-persist/lib/storage";
+    import {
+      persistStore,
+      persistReducer,
+      FLUSH,
+      REHYDRATE,
+      PAUSE,
+      PERSIST,
+      PURGE,
+      REGISTER,
+    } from "redux-persist";
+
+    export const persistCampersReduser = persistReducer({
+      key: "campersOrder",
+      storage,
+
+    })
+    export const store = configureStore({
+      reducer: {
+       campers: campersReducer,
+        filters: filtersReducer,
+      
       },
-    filters: {
-        status: "all",
-      },
-    };
-
-const rootReducer = (state = initialState) => {
-    return state;
-  };
-  
-  export const store = configureStore({
-    reducer: rootReducer,
-  });
-
-  export const persistor = persistStore(store);
+      middleware: getDefaultMiddleware =>
+        getDefaultMiddleware({
+          serializableCheck: {
+            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+          },
+        }),
+     
+    });
+    
+    export const persistor = persistStore(store);

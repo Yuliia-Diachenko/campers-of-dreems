@@ -1,4 +1,3 @@
-
 .heroSection {
     background-image: linear-gradient(
       to bottom, 
@@ -15,7 +14,7 @@
     align-items: flex-start;
     padding: 260px 806px 260px 64px;
     justify-content: center;
-    /* gap: 16px; */
+   
 }
 .prg {
     color: #fff;

@@ -1,0 +1,48 @@
+.container {
+    border: 1px solid #dadde1;
+    border-radius: 20px;
+    padding: 24px;
+    width: 888px;
+    height: 368px;
+    background-color: #fff;
+}
+.camperImg {
+    width: 292px;
+    height: 360px;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: lightgray;
+}
+.feature {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 104px;
+    gap: 8px;
+    margin: 44px 52px;
+}
+.image {
+    max-width: 122px;
+    max-height: 44px;
+    border-radius: 50px;
+    padding: 2px 18px;
+    background-color: #f2f4f7;
+    mix-blend-mode: multiply;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #101828;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+.link {
+    border: none;
+    background-color: transparent;
+}
+.active {
+    color: red;
+    fill: red;
+}
