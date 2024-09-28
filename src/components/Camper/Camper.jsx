@@ -18,6 +18,7 @@ export default function Camper({camper}) {
         const truncatedText = container.innerText.slice(0, 50) + '...';    
     setText(truncatedText);
 }, []);
+
     // add ,00
     const originalNumber =camper.price;
     const roundedNumber = originalNumber.toFixed(2); // Округлено до двох десяткових знаків
@@ -38,8 +39,9 @@ return (
 </div>
 <div>
     <div>
-        <FaStar /><span>{camper.rating}</span><span>(2 Reviews)</span>
-        <CiMap /><span>{camper.location}</span><button className={buildLinkClass} ><CiHeart /></button>
+    <FaStar /><span>{camper.rating}</span><span>(2 Reviews)</span>
+        <CiMap /><span>{camper.location}</span>
+        <button className={buildLinkClass} ><CiHeart /></button>
     </div>
 <div><p>{text}</p></div>
 <div className={css.feature}>
