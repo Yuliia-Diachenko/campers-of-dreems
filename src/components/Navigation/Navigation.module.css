@@ -10,19 +10,12 @@
     color: #101828;
   }
 .container {
-  display: flex;
-  gap: 32px;
-}
-.nav {
-  display: flex;
-  gap: 400px;
-}
-.logo {
-    padding: 24px 64px;
+    display: flex;  
+    gap: 32px;
 }
 .groopNav {
     justify-content: center;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 16px;  
 }

@@ -42,6 +42,9 @@ export default function CamperPage() {
                 <li className={css.photo}>
                 <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-3.webp`} alt="photo" />
                 </li>
+                <li className={css.photo}>
+                <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-3.webp`} alt="photo" />
+                </li>
             </ul>
           </div>
        <p className={css.discription}>{camper?.discription || "Embrace simplicity and freedom with the Mavericks panel truck, an ideal choice for solo travelers or couples seeking a compact and efficient way to explore the open roads. This no-frills yet reliable panel truck offers the essentials for a comfortable journey, making it the perfect companion for those who value simplicity and functionality." }</p>

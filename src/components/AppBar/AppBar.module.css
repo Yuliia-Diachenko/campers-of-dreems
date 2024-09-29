@@ -6,6 +6,10 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
-    justify-content: space-around;   
-
+    justify-content: flex-start;   
+    gap: 500px;
   }
+
+.logo { 
+  margin-left: 64px;
+}

@@ -1,5 +1,5 @@
 import css from './Reviews.module.css';
-import BookForm from '../BookForm/BookForm';
+import BookForm from '../BookForm/BookForm.jsx';
 // import Rating from '@mui/material/Rating';
 // import Box from '@mui/material/Box';
 // import StarIcon from '@mui/icons-material/Star';

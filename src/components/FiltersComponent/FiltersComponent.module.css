@@ -1,0 +1,23 @@
+.buttonFilter {
+    border: 1px solid #dadde1;
+    border-radius: 12px;
+    width: 112px;
+    height: 96px;
+    mix-blend-mode: multiply;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #101828;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+}
+.buttonFilter:active,
+.buttonFilter:focus {
+    border: 1px solid #e44848;
+}

@@ -29,3 +29,6 @@
     width: 571px; 
    
 }
+.button:focus {
+    background-color: #d84343;
+}

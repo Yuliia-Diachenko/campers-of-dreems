@@ -4,10 +4,10 @@
     gap: 40px;
     justify-content: center;
     margin-top: 56px;
+    margin-bottom: 80px;
 }
 .reviews {
-    width: 606px;   
-    
+    max-width: 630px;       
 }
 .avatarContainer {
     display: flex;

@@ -1,24 +1,25 @@
-.containerFeature {
-    border-radius: 10px;
-    width: 606px;
-    height: 660px;
-    background-color: #f7f7f7;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;    
-}
 .container {
     max-width: 1312px;
     display: flex;
     gap: 40px;
     margin: 0 auto;
+    margin-top: 56px;
     justify-content: center;
+    margin-bottom: 80px;
 }
+.containerFeature {
+    border-radius: 10px;
+    width: 606px;    
+    background-color: #f7f7f7;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;    
+}
+
 .feature {
     display: flex;
     flex-wrap: wrap;
-    min-height: 104px;
     gap: 8px;
     margin: 44px 52px;
 }
@@ -42,7 +43,7 @@
 }
 
 .detals {
-    max-width: 527px;
+    max-width: 630px;
     min-height: 224px;
     margin: 0 52px 44px 52px;
 }

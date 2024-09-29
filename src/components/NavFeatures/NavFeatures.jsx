@@ -8,10 +8,10 @@ const buildLinkClass = ({ isActive }) => {
 export default function NavFeatures() {
     return (   
             <div >
-                <ul className={css.container}>
-                    <li><NavLink to="features" className={buildLinkClass}>Features</NavLink></li>
-                    <li><NavLink to="reiews" className={buildLinkClass}>Reiews</NavLink></li>
-                </ul>
+                <div className={css.container}>
+                    <NavLink to="features" className={buildLinkClass}>Features</NavLink>
+                    <NavLink to="reviews" className={buildLinkClass}>Reviews</NavLink>
+                </div>
             <Outlet />
             </div>
       )

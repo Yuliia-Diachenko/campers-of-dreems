@@ -5,8 +5,8 @@ const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("../../pages/CatalogPage/CatalogPage"));
 const CamperPage = lazy(() => import("../../pages/CamperPage/CamperPage"));
 const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage"));
-const Features = lazy(() => import("../Features/Features"));
-const Reviews = lazy(() => import("../Features/Features"));
+const Features = lazy(() => import("../Feature/Feature"));
+const Reviews = lazy(() => import("../Reviews/Reviews"));
 
 export default function App() {
 
