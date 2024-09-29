@@ -24,7 +24,7 @@ return (
   <div className={css.group}>
         <h2 className={css.header}>Book your campervan now</h2>
         <p className={css.connect}>Stay connected! We are always ready to help you.</p>
-    <Formik initialValues={{ name: "", email: "", booking_date:""  }} 
+    <Formik initialValues={{ name: "", email: "", booking_date:"" }} 
     onSubmit={handleSubmit} 
     validationSchema={FeedbackSchema} 
     >        

@@ -1,6 +1,5 @@
 import css from './CatalogPage.module.css';
 import icons from '../../image/symbol-defs.svg';
-import {Link} from 'react-router-dom';
 import { useId } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -101,9 +100,9 @@ export default function CatalogPage() {
                     {campers.length > 0 ? ( 
 <ul className={css.list}>
 {isLoading && !error && <Loader />}
-      {campers?.map((camper) => (
+      {campers.map((camper) => (
         <li key={camper.id} >
-            <Link to={`/campers/${camper.id}`} className={css.link} ><Camper/></Link>
+            <Camper camper={camper}/>
         </li>
       ))}
     </ul>
