@@ -78,6 +78,7 @@
     line-height: 1.5;
     color: #6c717b;
     padding: 18px;
+    resize: none;
 }
 .area:focus {
     color: #101828;

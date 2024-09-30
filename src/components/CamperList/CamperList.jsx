@@ -14,7 +14,7 @@ export default function CamperList() {
     useEffect(() => {
         dispatch(fetchCampers());
       }, [dispatch]);
-      console.log(campers)
+
     const camperId = campers?.id;
 return (
     <div>

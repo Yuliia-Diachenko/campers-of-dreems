@@ -2,6 +2,7 @@ import css from './Camper.module.css';
 import { CiMap } from "react-icons/ci";
 import icons from '../../image/symbol-defs.svg';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 // import clsx from 'clsx';
 
 export default function Camper({camper}) {
@@ -17,7 +18,7 @@ export default function Camper({camper}) {
     const integerPart = parts[0];
     const decimalPart = parts[1] || '00'; // Якщо немає десяткової частини, додаємо "00"
     const finalFormattedNumber = `${integerPart}.${decimalPart}`;
-    console.log(finalFormattedNumber); // Виведе "42.00"
+ 
 
 return (
     <div className={css.container}>
@@ -69,13 +70,12 @@ return (
                     {camper.kitchen === true ? (<span className={css.image}>
                     <svg  width="20" height="20">
                     <use href={`${icons}#icon-cup-hot`}></use></svg>Kitchen</span>) : false}
-            
-                
+                            
                     {camper.radio === true ? (<span className={css.image}><svg  width="20" height="20">
                     <use href={`${icons}#icon-ui-radios`}></use></svg>Radio</span>) : false}
              
             </div></div>
-            <Button>Show more</Button>
+           <Link to={`/catalog/${camper.id}`}><Button>Show more</Button></Link>
 </div>
     </div>
 )

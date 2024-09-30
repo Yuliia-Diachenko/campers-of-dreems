@@ -34,7 +34,7 @@ return (
             
             <Field type="text" name="email" id={`${fieldId}-email`} placeholder="Email*"className={css.input}/>
             <ErrorMessage name="email" component="span" className={css.error} />
-
+      
             <Field type="date"
             name="booking_date" id={`${fieldId}-booking_date`} placeholder="Booking date*" className={css.input}/>
             <ErrorMessage name="booking_date" component="span" className={css.error}/>
