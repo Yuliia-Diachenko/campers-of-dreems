@@ -6,8 +6,10 @@
     height: 368px;
     background-color: #fff;
     display: flex;
+    align-items: start;
     gap: 24px;
 }
+
 .camperImg {
     width: 292px;
     height: 320px;
@@ -18,9 +20,11 @@
 .feature {
     display: flex;
     flex-wrap: wrap;
+    width: 400px;
     min-height: 104px;
     gap: 8px;
-    margin: 44px 52px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 .image {
     max-width: 122px;
@@ -48,3 +52,32 @@
     color: red;
     fill: red;
 }
+.detalsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+.description {
+    max-width: 525px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #475467;
+    margin: 24px 0;
+  }
+  .priceContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 524px;
+  }
+  .price {
+    display: flex;
+  }
+  .heart {
+    border: none;
+    background-color: transparent;
+  }
