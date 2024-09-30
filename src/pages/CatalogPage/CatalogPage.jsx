@@ -101,7 +101,7 @@ export default function CatalogPage() {
 <ul className={css.list}>
 {isLoading && !error && <Loader />}
       {campers.map((camper) => (
-        <li key={camper.id} >
+        <li key={camper.name} >
             <Camper camper={camper}/>
         </li>
       ))}

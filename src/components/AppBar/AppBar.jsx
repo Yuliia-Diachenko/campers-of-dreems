@@ -4,6 +4,7 @@ import icons from '../../image/symbol-defs-logo.svg';
 import { Link } from "react-router-dom";
 
 export default function AppBar() {
+  
   return (
     <header className={css.header}>    
         <Link to='/'><svg width="136" height="16" className={css.logo}>

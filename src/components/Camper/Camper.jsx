@@ -31,7 +31,7 @@ export default function Camper({camper}) {
 return (
     <div className={css.container}>
         <div>
-<img src={camper.gallery.thumb} alt="camper" className={css.camperImg}/>
+<img src={camper.gallery[0].thumb} alt="camper" className={css.camperImg}/>
 </div>
 <div>
 <h3 className={css.nameCamper}>{camper.name}</h3>

@@ -1,8 +1,6 @@
 .heroSection {
-    background-image: linear-gradient(
-      to bottom, 
-      rgba(46, 47, 66, 0.7), 
-      rgba(46, 47, 66, 0.7)), url("../../../public/Camp-img.jpg");
+    background-image:
+      url("../../../public/Camp-img.jpg");
       width: 1440px;
       height: 696px;
       margin: 0 auto;

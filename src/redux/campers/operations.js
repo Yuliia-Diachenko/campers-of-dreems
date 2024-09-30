@@ -9,7 +9,7 @@ export const fetchCampers = createAsyncThunk(
         
         try {
             const response = await axios.get('/campers');
-            return { items: response.data.items, total: response.data.total };
+            return response.data.items;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         
