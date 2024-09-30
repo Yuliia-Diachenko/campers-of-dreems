@@ -4,10 +4,8 @@ import { useId } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/campers/operations";
-import { selectError, selectLoading, selectCampers } from "../../redux/campers/selectors";
-// import { selectVisibleCampers } from "../../redux/filters/selectors";
-import Loader from '../../components/Loader/Loader';
-import Camper from '../../components/Camper/Camper';
+import { selectCampers } from "../../redux/campers/selectors";
+import CamperList from '../../components/CamperList/CamperList';
 import Button from '../../components/Button/Button';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import FiltersComponent from '../../components/FiltersComponent/FiltersComponent';
@@ -22,8 +20,6 @@ const FeedbackSchema = Yup.object().shape({
 export default function CatalogPage() {
     const fieldId = useId();
     const dispatch = useDispatch();
-    const isLoading = useSelector(selectLoading);
-    const error = useSelector(selectError); 
     const campers = useSelector(selectCampers);
 
     // const campers = useSelector(selectVisibleCampers);
@@ -97,16 +93,7 @@ export default function CatalogPage() {
                    
                     </aside>
                 <div className={css.campersContainer}>
-                    {campers.length > 0 ? ( 
-<ul className={css.list}>
-{isLoading && !error && <Loader />}
-      {campers.map((camper) => (
-        <li key={camper.name} >
-            <Camper camper={camper}/>
-        </li>
-      ))}
-    </ul>
-    ) : ( <p>Something went wrong...</p>)}
+                   <CamperList />
     <LoadMoreBtn />
     </div>    
     </div>

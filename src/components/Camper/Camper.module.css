@@ -5,10 +5,12 @@
     width: 888px;
     height: 368px;
     background-color: #fff;
+    display: flex;
+    gap: 24px;
 }
 .camperImg {
     width: 292px;
-    height: 360px;
+    height: 320px;
     border-radius: 10px;
     object-fit: cover;
     background-color: lightgray;
