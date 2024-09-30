@@ -1,5 +1,4 @@
 import css from './Camper.module.css';
-import { FaStar } from "react-icons/fa";
 import { CiMap } from "react-icons/ci";
 import icons from '../../image/symbol-defs.svg';
 import Button from '../Button/Button';
@@ -30,13 +29,18 @@ return (
         <h3 className={css.nameCamper}>{camper.name}</h3>
     <div className={css.price}>
         <h3 className={css.priceCamper}>&#8364;{finalFormattedNumber}</h3>
-        <button className={css.heart}><svg  width="20" height="20">
-        <use href={`${icons}#icon-heart`}></use></svg></button>
+        <button className={css.heart}>
+        <svg  width="20" height="20" >
+            <use href={`${icons}#icon-heart`}></use>
+        </svg>
+        </button>
     </div>
 </div>
 <div>
-    <div>
-        <FaStar /><span>{camper.rating}</span><span>(2 Reviews)</span>
+    <div className={css.starIcon}>
+        <svg  width="20" height="20">
+            <use href={`${icons}#icon-star`}></use>
+        </svg><span>{camper.rating}</span><span className={css.reviews}>(2 Reviews)</span>
         <CiMap /><span>{camper.location}</span>
         
     </div>

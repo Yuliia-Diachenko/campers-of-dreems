@@ -27,7 +27,7 @@
     margin-bottom: 24px;
 }
 .image {
-    max-width: 122px;
+    max-width: 140px;
     max-height: 44px;
     border-radius: 50px;
     padding: 2px 18px;
@@ -76,8 +76,25 @@
   }
   .price {
     display: flex;
+    gap: 12px;
   }
   .heart {
     border: none;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+   
+  }
+  .hert:focus {
+    stroke: currentColor;
+    fill: #E44848;
+  }
+  .starIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+  }
+  .reviews {
+    padding-right: 16px;
   }
