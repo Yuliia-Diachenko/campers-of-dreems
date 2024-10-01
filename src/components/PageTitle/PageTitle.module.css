@@ -5,3 +5,9 @@
     width: 571px;
     color: #f7f7f7;
   }
+  @media (max-width: 768px) {
+  .heading {
+    width: 300px;  
+    font-size: 24px;
+  }
+  }

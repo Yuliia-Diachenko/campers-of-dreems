@@ -1,6 +1,7 @@
 .heroSection {
     background-image:
       url("../../../public/Camp-img.jpg");
+      background-size: cover;
       width: 1440px;
       height: 696px;
       margin: 0 auto;
@@ -24,9 +25,20 @@
     font-size: 48px;
     line-height: 0.66667;
     color: #f7f7f7;
-    width: 571px; 
+    max-width: 571px; 
    
 }
 .button:focus {
     background-color: #d84343;
+}
+
+@media (max-width: 768px) {
+    .container {      
+        max-width: 300px;            
+    }
+    .prg {
+        color: #fff;
+        margin-bottom: 12px;
+        width: 300px; 
+    }
 }

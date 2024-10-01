@@ -5,50 +5,56 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchCamper } from '../../redux/campers/operations';
 import { selectCamper } from '../../redux/campers/selectors';
 import icons from '../../image/symbol-defs.svg';
+import { useParams } from 'react-router-dom';
 
 export default function CamperPage() {
- 
     const dispatch = useDispatch();
     const camper = useSelector(selectCamper);
-    const idCamp = camper?.id;
+    const idCamp = camper.id;    
+    const {id} = useParams();
 
     useEffect(() => {
         
-          dispatch(fetchCamper());
+          dispatch(fetchCamper(id));
       
-      }, [ dispatch]);
+      }, [ dispatch, id ]);
+
+         // add ,00
+   const originalNumber =camper.price;
+   const roundedNumber = originalNumber.toFixed(2); // Округлено до двох десяткових знаків
+
     return(
     
         <div className={css.container}>
           <div>
-          <h3 className={css.name}>{camper?.name || "Mavericks"}</h3>
+          <h3 className={css.name}>{camper.name }</h3>
           <div className={css.location}><span className={css.common}><svg width="20" height="20">
                     <use href={`${icons}#icon-star`}></use>
-                </svg>{camper?.rating || "4.4(2 Reviews)"}</span>
+                </svg><span className={css.rating}>{camper.rating}(2 Reviews)</span></span>
           <span className={css.common}><svg width="16" height="16">
                     <use href={`${icons}#icon-map`}></use>
-                </svg>{camper?.location || "Kyiv, Ukraine"}</span>
+                </svg>{camper.location }</span>
           </div>
-          <p className={css.price}>€{camper?.price || "8000.00"}</p>
+          <p className={css.price}>&#8364;{roundedNumber }</p>
           </div>
           <div>
             <ul className={css.photoContainer}>
-                <li className={css.photo}>
-                <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-1.webp`} alt="photo" />
+                <li >
+                <img className={css.photo} width='292' height='312' src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-1.webp`} alt="photo" />
                 </li>
-                <li className={css.photo}>
-                <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-2.webp`} alt="photo" />
+                <li >
+                <img className={css.photo} width='292' height='312' src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-2.webp`} alt="photo" />
                 </li>
-                <li className={css.photo}>
-                <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-3.webp`} alt="photo" />
+                <li >
+                <img className={css.photo} width='292' height='312' src={`https://i.pinimg.com/564x/da/c1/c0/dac1c088884edd1e8d5c77cf99716179.jpg`} alt="photo" />
                 </li>
-                <li className={css.photo}>
-                <img src={`https://ftp.goit.study/img/campers-test-task/${idCamp}-3.webp`} alt="photo" />
+                <li >
+                <img className={css.photo} width='292' height='312'  src={`https://i.pinimg.com/564x/b8/a0/13/b8a013c03dde96355849307ed4cbeef1.jpg`} alt="photo" />
                 </li>
             </ul>
           </div>
-       <p className={css.discription}>{camper?.discription || "Embrace simplicity and freedom with the Mavericks panel truck, an ideal choice for solo travelers or couples seeking a compact and efficient way to explore the open roads. This no-frills yet reliable panel truck offers the essentials for a comfortable journey, making it the perfect companion for those who value simplicity and functionality." }</p>
-        <NavFeatures/>
+       <p className={css.discription}>{camper.description}</p>
+        <NavFeatures />
         </div>
        
     )
