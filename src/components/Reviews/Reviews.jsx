@@ -27,27 +27,27 @@ export default function Reviews() {
                     
                     <li>
                     <div className={css.avatarContainer}>
-                    <span className={css.avatarCircle}>A</span>
+                    <span className={css.avatarCircle}>{camper.name?.charAt(0).toUpperCase()}</span>
                     <div className={css.nameContainer}>
-                        <h6 className={css.name}>{camper.reviews[0]?.reviewer_name}</h6>
+                        <h6 className={css.name}>{camper?.reviews[0]?.reviewer_name}</h6>
                         <svg width="96" height="30">
                             <use href={`${icons}#icon-rate-five`}></use>
                         </svg>
                     </div>   
                         </div>
-                        <p className={css.text}>{camper.reviews[0]?.comment}</p>
+                        <p className={css.text}>{camper?.reviews[0]?.comment}</p>
                     </li>
                     <li>
                     <div className={css.avatarContainer}>
-                    <span className={css.avatarCircle}>B</span>
+                    <span className={css.avatarCircle}>{camper.name?.charAt(0).toUpperCase()}</span>
                     <div className={css.nameContainer}>
-                        <h6 className={css.name}>{camper.reviews[1]?.reviewer_name}</h6>
+                        <h6 className={css.name}>{camper?.reviews[1]?.reviewer_name}</h6>
                         <svg width="96" height="30">
                             <use href={`${icons}#icon-rate-three`}></use>
                         </svg>
                     </div>
                     </div>
-                        <p className={css.text}>{camper.reviews[1]?.comment}</p>
+                        <p className={css.text}>{camper?.reviews[1]?.comment}</p>
 
                     </li>
                 </ul>
