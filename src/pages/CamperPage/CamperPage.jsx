@@ -1,11 +1,11 @@
 import css from './CamperPage.module.css';
 import { useEffect } from 'react';
-import NavFeatures from '../../components/NavFeatures/NavFeatures';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCamper } from '../../redux/campers/operations';
 import { selectCamper } from '../../redux/campers/selectors';
+import NavFeatures from '../../components/NavFeatures/NavFeatures';
 import icons from '../../image/symbol-defs.svg';
-import { useParams } from 'react-router-dom';
 
 export default function CamperPage() {
     const dispatch = useDispatch();
@@ -15,13 +15,8 @@ export default function CamperPage() {
 
     useEffect(() => {
         
-          dispatch(fetchCamper(id));
-      
+          dispatch(fetchCamper(id));      
       }, [ dispatch, id ]);
-
-//          // add ,00
-//    const originalNumber =camper.price.toFixed(2);
-//    const roundedNumber = originalNumber.toFixed(2); // Округлено до двох десяткових знаків
 
     return(
     
