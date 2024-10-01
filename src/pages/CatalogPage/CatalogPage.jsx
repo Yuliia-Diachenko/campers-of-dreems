@@ -7,7 +7,7 @@ import { fetchCampers } from "../../redux/campers/operations";
 import { selectCampers } from "../../redux/campers/selectors";
 import CamperList from '../../components/CamperList/CamperList';
 import Button from '../../components/Button/Button';
-import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
+
 import FiltersComponent from '../../components/FiltersComponent/FiltersComponent';
 import FiltersFormComponent from '../../components/FiltersFormComponent/FiltersFormComponent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -94,7 +94,7 @@ export default function CatalogPage() {
                     </aside>
                 <div className={css.campersContainer}>
                    <CamperList />
-    <LoadMoreBtn />
+    
     </div>    
     </div>
     )

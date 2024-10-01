@@ -14,7 +14,7 @@ export default function HomePage() {
       <p className={css.prg}>
           You can find everything you want in our catalog
       </p>
-      <Link to="/catalog"><Button type="button" >View Now</Button></Link>
+      <Link to="/catalog"><Button type="button">View Now</Button></Link>
       </div>
       </section>
   );

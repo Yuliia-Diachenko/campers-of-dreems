@@ -9,16 +9,7 @@ export default function Camper({camper}) {
 
     // const buildLinkClass = ({ isActive }) => {
     //     return clsx(css.link, isActive && css.active);
-    //   }
-
-    // add ,00
-    const originalNumber =camper?.price;
-    const roundedNumber = originalNumber?.toFixed(2); // Округлено до двох десяткових знаків
-    const parts = roundedNumber?.split('.');
-    const integerPart = parts[0];
-    const decimalPart = parts[1] || '00'; // Якщо немає десяткової частини, додаємо "00"
-    const finalFormattedNumber = `${integerPart}.${decimalPart}`;
- 
+    //   }   
 
 return (
     <div className={css.container}>
@@ -29,7 +20,7 @@ return (
     <div className={css.priceContainer}>
         <h3 className={css.nameCamper}>{camper.name}</h3>
     <div className={css.price}>
-        <h3 className={css.priceCamper}>&#8364;{finalFormattedNumber}</h3>
+        <h3 className={css.priceCamper}>&#8364;{camper?.price.toFixed(2)}</h3>
         <button className={css.heart}>
         <svg  width="20" height="20" >
             <use href={`${icons}#icon-heart`}></use>

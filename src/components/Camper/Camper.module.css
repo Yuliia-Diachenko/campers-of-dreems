@@ -43,6 +43,7 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
+    text-transform: capitalize;
 }
 .link {
     border: none;
@@ -85,9 +86,10 @@
     align-items: center;
    
   }
-  .hert:focus {
-    stroke: currentColor;
-    fill: #E44848;
+  .heart:focus {
+    stroke: #e44848;
+    fill: #e44848;
+    
   }
   .starIcon {
     display: flex;

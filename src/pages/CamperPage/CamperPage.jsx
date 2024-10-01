@@ -18,6 +18,7 @@ export default function CamperPage() {
           dispatch(fetchCamper(id));      
       }, [ dispatch, id ]);
 
+
     return(
     
         <div className={css.container}>

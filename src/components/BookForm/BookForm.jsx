@@ -18,14 +18,14 @@ const FeedbackSchema = Yup.object().shape({
 
 export default function BookForm() {
     const fieldId = useId();
-    const handleSubmit = (values, actions) => {   
-        toast.success('Thanks for dropping by! Great choice!');            
+   
+    const handleSubmit = (values, actions) => { 
+      toast.success('Thanks for dropping by! Great choice!');
         actions.resetForm();       
         };
 
       // DataPicker
-      const [startDate, setStartDate] = useState(new Date());
-       
+    const [startDate, setStartDate] = useState(new Date());       
 
 return ( 
 <div className={css.container}> 
@@ -43,8 +43,8 @@ return (
             <Field type="text" name="email" id={`${fieldId}-email`} placeholder="Email*"className={css.input}/>
             <ErrorMessage name="email" component="span" className={css.error} />
 
-            <DatePicker  minDate={new Date()}                        
-                          selected={startDate} 
+            <DatePicker type="date" minDate={new Date()}                        
+                          selected={startDate}
                           onChange={(date) => setStartDate(date)}
                           className={css.input} 
                           placeholderText="Booking date*" 
@@ -53,10 +53,11 @@ return (
       
             <Field as="textarea" cols="20" rows="5" type="text" name="comment" id={`${fieldId}-comment`} placeholder="Comment" className={css.area}/>
             <ErrorMessage name="comment" component="span" className={css.error}/>           
+               
         
-        <Button type="submit" className={css.button}>Send</Button>
-        <Toaster position="top-center" reverseOrder={false} />
-      </Form>
+        <Button type="submit" className={css.button}>Send</Button> 
+        <Toaster  position="top-center" reverseOrder={false}/>
+        </Form>
       </Formik>
       </div>
       </div>)

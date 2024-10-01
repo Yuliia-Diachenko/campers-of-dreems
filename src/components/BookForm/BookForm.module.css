@@ -27,7 +27,9 @@
     height: 56px;
     
 }
-
+.muiButton {
+ display: none;
+}
 .header {
     font-family: "Inter", sans-serif;
     font-weight: 600;
@@ -91,7 +93,7 @@
     font-size: 14px;   
 }
 /* ========== data picker ================== */
-.input {
+/* .input {
     .react-datepicker__triangle {
     display: none;
     color: #475467;
@@ -171,4 +173,4 @@
     background-color: var(--brand) !important;
     color: var(--dark) !important;
   }}
-  
+   */

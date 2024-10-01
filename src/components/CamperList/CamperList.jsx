@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/campers/operations";
 import { selectError, selectLoading, selectCampers } from "../../redux/campers/selectors";
 import Camper from '../../components/Camper/Camper';
+import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import Loader from "../Loader/Loader";
 import css from './CamperList.module.css';
 
@@ -16,8 +17,9 @@ export default function CamperList() {
       }, [dispatch]);
 
     const camperId = campers?.id;
+
 return (
-    <div>
+    <div className={css.campersContainer}>
     {campers.length > 0 ? (
       <ul className={css.list}>
         {isLoading && !error && <Loader />}
@@ -30,6 +32,7 @@ return (
     ) : (
       <p>Something went wrong...</p>
     )}
+    <LoadMoreBtn />
   </div>
 )
 }
