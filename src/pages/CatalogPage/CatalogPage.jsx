@@ -7,7 +7,6 @@ import { fetchCampers } from "../../redux/campers/operations";
 import { selectCampers } from "../../redux/campers/selectors";
 import CamperList from '../../components/CamperList/CamperList';
 import Button from '../../components/Button/Button';
-
 import FiltersComponent from '../../components/FiltersComponent/FiltersComponent';
 import FiltersFormComponent from '../../components/FiltersFormComponent/FiltersFormComponent';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -21,8 +20,6 @@ export default function CatalogPage() {
     const fieldId = useId();
     const dispatch = useDispatch();
     const campers = useSelector(selectCampers);
-
-    // const campers = useSelector(selectVisibleCampers);
 
     useEffect(() => {
       dispatch(fetchCampers());
@@ -41,46 +38,55 @@ export default function CatalogPage() {
                         validationSchema={FeedbackSchema}>
                  <Form className={css.form}>
                     <label className={css.lable} htmlFor={`${fieldId}-location`}>Location</label>
-                    <Field className={css.input} onChange={handleChange}  name='location' type="text" id={`${fieldId}-location`} placeholder={ "Kyiv, Ukraine"}/>
-                    <ErrorMessage name="location" component="span" className={css.error}/>
-                </Form>
-                </Formik>
+                            <div className={css.inputDiv}><svg  width="20" height="20" className={css.svgLocation}>
+                            <use href={`${icons}#icon-map`}></use>
+                            </svg>
+                    <Field className={css.input} onChange={handleChange} name='location' type="text" id={`${fieldId}-location`} placeholder={"Kyiv, Ukraine"}/>
+                    <ErrorMessage name="location" component="span" className={css.error}/></div>
+              
                 <div>
                     <p className={css.filterText}>Filters</p>
                     <div className={css.containerVehicle}>
                     <h4 className={css.headerFilter}>Vehicle equipment</h4>
                     <div >
-                    <div className={css.filtersItems}>       
-                        <div className={css.filterBtn}>
-                      
-                        <FiltersComponent id="filterAC"><span className={css.filterBtn}><svg  width="20" height="20">
-                            <use href={`${icons}#icon-wind`}></use>
-                        </svg>AC</span></FiltersComponent>
-                        </div>
-                        <div className={css.filterBtn}>
                         
+                    <div className={css.filtersItems}> 
+                        
+                        <label htmlFor={`${fieldId}-AC`} className={css.filterBtn}>                          
+                            <FiltersComponent ><span className={css.filterBtn}><svg  width="20" height="20">
+                            <use href={`${icons}#icon-wind`}></use>
+                            </svg>AC</span>
+                            </FiltersComponent>
+                            <Field as="checkbox" id={`${fieldId}-AC`} name="toggleAC" className={css.checkHide}/>
+                        </label>
+                    
+                        <label htmlFor={`${fieldId}-transmissionA`} className={css.filterBtn}>                        
                             <FiltersComponent id="filterAutomatic"><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-diagram`}></use>
-                        </svg> Automatic</span></FiltersComponent>
-                        </div>
-                        <div className={css.filterBtn}>
+                            </svg> Automatic</span></FiltersComponent>
+                            <Field as="checkbox" id={`${fieldId}-transmissionA`} name="toggleTransmissionA" className={css.checkHide}/>
+                        </label>
                         
-                            <FiltersComponent id="filterKitchen"><span className={css.filterBtn}><svg  width="20" height="20">
+                        <label htmlFor={`${fieldId}-kitchen`} className={css.filterBtn}>                        
+                            <FiltersComponent id={`${fieldId}-kitchen`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-cup-hot`}></use>
-                        </svg>Kitchen</span></FiltersComponent>
-                        </div>
-                        <div className={css.filterBtn}>
-                          
-                            <FiltersComponent id="filterKitchenTV"><span className={css.filterBtn}><svg  width="20" height="20">
+                            </svg>Kitchen</span></FiltersComponent>
+                            <Field as="checkbox" id={`${fieldId}-kitchen`} name="toggleKitchen" className={css.checkHide}/>
+                        </label>
+
+                        <label htmlFor={`${fieldId}-TV`} className={css.filterBtn}>                          
+                            <FiltersComponent id={`${fieldId}-TV`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-tv`}></use>
-                        </svg>TV</span></FiltersComponent>
-                        </div>
-                        <div className={css.filterBtn}>
-                         
-                            <FiltersComponent id="filterBathroom"><span className={css.filterBtn}><svg  width="20" height="20">
+                            </svg>TV</span></FiltersComponent>
+                            <Field as="checkbox" id={`${fieldId}-TV`} name="toggleTV" className={css.checkHide}/>
+                        </label>
+
+                        <label htmlFor={`${fieldId}-bathroom`} className={css.filterBtn}>                         
+                            <FiltersComponent id={`${fieldId}-bathroom`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-bathroom`}></use>
-                        </svg>Bathroom</span></FiltersComponent>
-                        </div>
+                            </svg>Bathroom</span></FiltersComponent>
+                            <Field as="checkbox" id={`${fieldId}-bathroom`} name="toggleBathroom" className={css.checkHide}/>
+                        </label>
                     </div>
                     </div> 
                     </div>                    
@@ -90,7 +96,8 @@ export default function CatalogPage() {
                    <div className={css.searchBtn}><Button >Search</Button></div>
                     </div>
                     </div>
-                   
+                    </Form>
+                    </Formik>
                     </aside>
                 <div className={css.campersContainer}>
                    <CamperList />

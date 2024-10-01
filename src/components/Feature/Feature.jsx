@@ -20,6 +20,8 @@ export default function Feature() {
       }, [ dispatch, id ]);
 
     return (
+        <>
+        <hr color='#dadde1' border='1'/>
         <div className={css.container}>
         <div className={css.containerFeature}>
         <div className={css.feature}>
@@ -64,6 +66,7 @@ export default function Feature() {
             </div>
                 <div className={css.detals}>
                     <h4 className={css.headerDetals}>Vehicle details</h4>
+                    <hr color='#dadde1' border='1'/>
                     <div className={css.detalsList}>
                        <div className={css.detalsLeft}> 
                         <ul className={css.ul}>
@@ -89,6 +92,7 @@ export default function Feature() {
         </div>
         <BookForm/>
         </div>
+        </>
     )
 
 }

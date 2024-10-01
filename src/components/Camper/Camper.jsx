@@ -3,13 +3,8 @@ import { CiMap } from "react-icons/ci";
 import icons from '../../image/symbol-defs.svg';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
-// import clsx from 'clsx';
 
 export default function Camper({camper}) {
-
-    // const buildLinkClass = ({ isActive }) => {
-    //     return clsx(css.link, isActive && css.active);
-    //   }   
 
 return (
     <div className={css.container}>
@@ -22,24 +17,21 @@ return (
     <div className={css.price}>
         <h3 className={css.priceCamper}>&#8364;{camper?.price.toFixed(2)}</h3>
         <button className={css.heart}>
-        <svg  width="20" height="20" >
+        <svg width="20" height="20" >
             <use href={`${icons}#icon-heart`}></use>
         </svg>
         </button>
     </div>
-</div>
-<div>
+    </div>
+    <div>
     <div className={css.starIcon}>
         <svg  width="20" height="20">
             <use href={`${icons}#icon-star`}></use>
         </svg><span>{camper.rating}</span><span className={css.reviews}>(2 Reviews)</span>
-        <CiMap /><span>{camper.location}</span>
-        
+        <CiMap /><span>{camper.location}</span>        
     </div>
-
-
-<p className={css.description}>{camper.description}</p>
-<div className={css.feature}>
+    <p className={css.description}>{camper.description}</p>
+    <div className={css.feature}>
                 <span className={css.image}>
                 <svg width="20" height="20">
                     <use href={`${icons}#icon-diagram`}></use>
@@ -67,7 +59,7 @@ return (
              
             </div></div>
            <Link to={`/catalog/${camper.id}`}><Button>Show more</Button></Link>
-</div>
+    </div>
     </div>
 )
 }

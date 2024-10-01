@@ -1,24 +1,21 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
-import clsx from 'clsx';
 
 export default function Navigation() {
- const buildLinkClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
-  }
+
   return (    
  
     <nav className={css.container}>    
 
       <div className={css.groopNav}>
-          <NavLink className={buildLinkClass} to="/">
+          <NavLink className={css.link} to="/">
             Home
           </NavLink>
-          <NavLink className={buildLinkClass} to="/catalog">
+          <NavLink className={css.link} to="/catalog">
             Catalog
           </NavLink>
           </div>
-
+        
     </nav>
   
   );

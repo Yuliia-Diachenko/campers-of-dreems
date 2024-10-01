@@ -21,6 +21,8 @@ export default function Reviews() {
       }, [ dispatch, id ]);
 
     return (
+        <>
+        <hr color='#dadde1' border='1'/>
         <div className={css.container}>
             <div className={css.reviews}>
                 <ul className={css.list}>
@@ -54,6 +56,7 @@ export default function Reviews() {
             </div>
             <BookForm/>
         </div>
+        </>
     )
 
 }

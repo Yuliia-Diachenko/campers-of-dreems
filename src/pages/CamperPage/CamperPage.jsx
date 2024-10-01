@@ -50,7 +50,7 @@ export default function CamperPage() {
             </ul>
           </div>
        <p className={css.discription}>{camper.description}</p>
-        <NavFeatures />
+        <NavFeatures />      
         </div>
        
     )

@@ -11,8 +11,10 @@ export default function NavFeatures() {
                 <div className={css.container}>
                     <NavLink to="features" className={buildLinkClass} >Features</NavLink>
                     <NavLink to="reviews" className={buildLinkClass} >Reviews</NavLink>
+
                 </div>
             <Outlet />
+           
             </div>
       )
 }
