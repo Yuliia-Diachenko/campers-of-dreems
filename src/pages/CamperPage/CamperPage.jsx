@@ -19,9 +19,9 @@ export default function CamperPage() {
       
       }, [ dispatch, id ]);
 
-         // add ,00
-   const originalNumber =camper.price;
-   const roundedNumber = originalNumber.toFixed(2); // Округлено до двох десяткових знаків
+//          // add ,00
+//    const originalNumber =camper.price.toFixed(2);
+//    const roundedNumber = originalNumber.toFixed(2); // Округлено до двох десяткових знаків
 
     return(
     
@@ -35,7 +35,7 @@ export default function CamperPage() {
                     <use href={`${icons}#icon-map`}></use>
                 </svg>{camper.location }</span>
           </div>
-          <p className={css.price}>&#8364;{roundedNumber }</p>
+          <p className={css.price}>&#8364;{camper.price?.toFixed(2)}</p>
           </div>
           <div>
             <ul className={css.photoContainer}>
