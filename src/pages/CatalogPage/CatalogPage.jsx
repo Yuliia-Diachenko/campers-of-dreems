@@ -25,23 +25,31 @@ export default function CatalogPage() {
       dispatch(fetchCampers());
     }, [dispatch]);
     
-    const handleChange = (values, actions) => {  
-
-        actions.resetForm();       
+    const handleSubmit = (values, actions) => {  
+        actions.resetForm(); 
+        return      
         };
 
     return(
         <div className={css.container}>
             <aside className={css.sideBar}>
-                <Formik initialValues={{location: campers?.location}} 
-                        onChange={handleChange} 
+                <Formik initialValues={{location: campers?.location,
+                    toggleAC: false,
+                    toggleTransmissionA: false,
+                    toggleKitchen: false,
+                    toggleTV: false,
+                    toggleBathroom: false,
+
+                    checked: [],
+                }} 
+                        onSubmit={handleSubmit} 
                         validationSchema={FeedbackSchema}>
                  <Form className={css.form}>
-                    <label className={css.lable} htmlFor={`${fieldId}-location`}>Location</label>
+                    <label className={css.label} htmlFor={`${fieldId}-location`}>Location</label>
                             <div className={css.inputDiv}><svg  width="20" height="20" className={css.svgLocation}>
                             <use href={`${icons}#icon-map`}></use>
                             </svg>
-                    <Field className={css.input} onChange={handleChange} name='location' type="text" id={`${fieldId}-location`} placeholder={"Kyiv, Ukraine"}/>
+                    <Field className={css.input} name='location' type="text" id={`${fieldId}-location`} placeholder={"City"}/>
                     <ErrorMessage name="location" component="span" className={css.error}/></div>
               
                 <div>
@@ -49,7 +57,7 @@ export default function CatalogPage() {
                     <div className={css.containerVehicle}>
                     <h4 className={css.headerFilter}>Vehicle equipment</h4>
                     <div >
-                        
+                      <hr />  
                     <div className={css.filtersItems}> 
                         
                         <label htmlFor={`${fieldId}-AC`} className={css.filterBtn}>                          
@@ -57,41 +65,42 @@ export default function CatalogPage() {
                             <use href={`${icons}#icon-wind`}></use>
                             </svg>AC</span>
                             </FiltersComponent>
-                            <Field as="checkbox" id={`${fieldId}-AC`} name="toggleAC" className={css.checkHide}/>
+                            <Field type="checkbox" id={`${fieldId}-AC`} name="toggleAC" className={css.checkHide}/>
                         </label>
                     
                         <label htmlFor={`${fieldId}-transmissionA`} className={css.filterBtn}>                        
                             <FiltersComponent id="filterAutomatic"><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-diagram`}></use>
                             </svg> Automatic</span></FiltersComponent>
-                            <Field as="checkbox" id={`${fieldId}-transmissionA`} name="toggleTransmissionA" className={css.checkHide}/>
+                            <Field type="checkbox" id={`${fieldId}-transmissionA`} name="toggleTransmissionA" className={css.checkHide}/>
                         </label>
                         
                         <label htmlFor={`${fieldId}-kitchen`} className={css.filterBtn}>                        
                             <FiltersComponent id={`${fieldId}-kitchen`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-cup-hot`}></use>
                             </svg>Kitchen</span></FiltersComponent>
-                            <Field as="checkbox" id={`${fieldId}-kitchen`} name="toggleKitchen" className={css.checkHide}/>
+                            <Field type="checkbox" id={`${fieldId}-kitchen`} name="toggleKitchen" className={css.checkHide}/>
                         </label>
 
                         <label htmlFor={`${fieldId}-TV`} className={css.filterBtn}>                          
                             <FiltersComponent id={`${fieldId}-TV`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-tv`}></use>
                             </svg>TV</span></FiltersComponent>
-                            <Field as="checkbox" id={`${fieldId}-TV`} name="toggleTV" className={css.checkHide}/>
+                            <Field type="checkbox" id={`${fieldId}-TV`} name="toggleTV" className={css.checkHide}/>
                         </label>
 
                         <label htmlFor={`${fieldId}-bathroom`} className={css.filterBtn}>                         
                             <FiltersComponent id={`${fieldId}-bathroom`}><span className={css.filterBtn}><svg  width="20" height="20">
                             <use href={`${icons}#icon-bathroom`}></use>
                             </svg>Bathroom</span></FiltersComponent>
-                            <Field as="checkbox" id={`${fieldId}-bathroom`} name="toggleBathroom" className={css.checkHide}/>
+                            <Field type="checkbox" id={`${fieldId}-bathroom`} name="toggleBathroom" className={css.checkHide}/>
                         </label>
                     </div>
                     </div> 
                     </div>                    
                     <div>
                     <h4 className={css.headerFilter}>Vehicle type</h4>
+                    <hr stroke='#dadde1'/>
                     <FiltersFormComponent/>
                    <div className={css.searchBtn}><Button >Search</Button></div>
                     </div>

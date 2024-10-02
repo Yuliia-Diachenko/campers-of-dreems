@@ -28,3 +28,16 @@ export const fetchCamper = createAsyncThunk(
         }
     }
 )
+export const fetchVisiableCampers = createAsyncThunk(
+    'campers/fetchVisiableCampers',
+    async (page, limit, thunkAPI) => {
+        try {   
+            const response = await axios.get(`/campers?page=${page}&limit=${limit}`);
+
+            return response.data;
+
+          } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+          }
+        }  
+);

@@ -35,6 +35,9 @@ input {
   line-height: 1.5;
   color: #6c717b;
   border: none;
+  outline: none;
+  fill: none;
+
 }
 input:focus, input:active {
   border: none;
@@ -52,4 +55,9 @@ h5,
 h6,
 p {
 margin: 0;
+}
+.MuiOutlinedInput-notchedOutline,
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+.css-kg5swy {
+  border-width: 0;
 }

@@ -3,7 +3,7 @@
     height: 96px;
     display: flex;
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 24px;
 }
 .filterButton {
     border: 1px solid #dadde1;
